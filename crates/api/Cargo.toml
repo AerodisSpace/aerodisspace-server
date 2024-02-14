@@ -1,0 +1,35 @@
+[package]
+name = "api"
+edition.workspace = true
+version.workspace = true
+authors.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+uuid = { workspace = true }
+chrono = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+dotenvy = { workspace = true }
+logger = { workspace = true }
+auth = { workspace = true }
+error_mapper = { workspace = true }
+once_cell = { workspace = true }
+charybdis = "0.3.0"
+scylla = "0.12.0"
+rocket = { version = "0.5.0", features = ["json"] }
+fake = "2.9.2"
+futures = "0.3.30"
+
+
+# [target.'cfg(target_os = "linux")'.dependencies.scylla]
+# features = ["cloud", "ssl"]
+
+
+[build-dependencies]
+catalytic = { version = "0.1" }
+dotenvy = { workspace = true }
+
+[lints]
+workspace = true
