@@ -1,35 +1,22 @@
+/// Logic for the APPLICATION
 mod app;
+/// Configuration of the database connection
 mod database;
+/// Data Transfer Objects or Response Objects
 mod dto;
+/// Environment variables and configurations
 mod envs;
+/// Models for the database (TABLES AND UDTs(UDT = User Defined Types))
 mod models;
+/// Routers for the application
 mod router;
+/// Server for mount and start the application
+mod server;
+/// Utilities for the application
 mod utils;
-use envs::DEBUG_MODE;
-use logger::logger;
-use router::{catcher::catcher_router::catcher_router, user::user_router::user_router};
-
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
-    // SCYLLADB KEYSPACE IS CONFIGURED IN BUILD.RS
-
-    dotenvy::dotenv().ok();
-    logger();
-
-    let _rocket = rocket::build()
-        .mount("/user", user_router())
-        .register("/", catcher_router())
-        .launch()
-        .await?;
+    server::server::start().await?;
     Ok(())
-}
-
-fn logger() {
-    let write_log: bool = match std::env::var("WRITE_LOG").unwrap().as_str() {
-        "true" => true,
-        _ => false,
-    };
-    let level_log = std::env::var("LEVEL_LOG").unwrap();
-    logger::log_init(write_log, &level_log);
 }

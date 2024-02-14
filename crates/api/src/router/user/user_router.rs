@@ -6,9 +6,9 @@ use rocket::{get, post, routes, Route};
 use crate::app::user::auth::login_user::login_user;
 use crate::app::user::auth::signup_user::signup_user;
 use crate::app::user::get_user::{get_all_users, get_one_user};
-use crate::dto::base_dto::{create_error_response, create_response, BaseResponseDTO, ResponseStatusDTO};
 use crate::dto::user::user_auth_dto::{RequestLoginUserDTO, RequestRegisUserDTO, ResponseLoginUserDTO};
 use crate::dto::user::user_dto::{RequestFindUserDTO, ResponseUserDTO};
+use crate::dto::wrapper::{create_error_response, create_response, BaseResponseDTO, ResponseStatusDTO};
 use crate::router::guards::jwt_token_guard::JWTTokenGuard;
 
 #[post("/signup", data = "<data>")]
