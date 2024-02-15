@@ -1,6 +1,6 @@
 use rocket::{catch, catchers, response::status::Custom, routes, serde::json::Json};
 
-use crate::dto::wrapper::{create_error_response, BaseResponseDTO};
+use dto::wrapper::{create_error_response, BaseResponseDTO};
 
 #[catch(404)]
 fn not_found() -> Result<Custom<Json<BaseResponseDTO<()>>>, Custom<Json<BaseResponseDTO<()>>>> {

@@ -3,3 +3,4 @@
 /**/.cassandraWorkbench
 /**/.cassandraWorkbench.jsonc
 /**/Cargo.lock
+/**/current_schema.json

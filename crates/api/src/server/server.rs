@@ -1,14 +1,22 @@
+use database::{scylla::CachingSession, scylladb::connection::build_session};
 use logger::logger::log_init;
 
-use crate::router::{catcher::catcher_router::catcher_router, user::user_router::user_router};
+use crate::router::{aircraft::aircraft_router::aircract_router, catcher::catcher_router::catcher_router, user::user_router::user_router};
+
+use super::shared::SCYLLADB_SESSION;
 
 pub async fn start() -> Result<(), rocket::Error> {
     // SCYLLADB KEYSPACE IS CONFIGURED IN BUILD.RS
 
     dotenvy::dotenv().ok();
+    
+    let session = CachingSession::from(build_session().await.unwrap(), 1000);
+    SCYLLADB_SESSION.set(session).expect("Error setting scylladb session");
+
     log_config();
     let _rocket = rocket::build()
         .mount("/user", user_router())
+        .mount("/aircraft", aircract_router())
         .register("/", catcher_router())
         .launch()
         .await?;

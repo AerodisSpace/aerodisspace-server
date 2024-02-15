@@ -1,0 +1,9 @@
+{
+    "cassandraWorkbench.activeClusterName": "Cluster AllowAllAuthenticator",
+    "cassandraWorkbench.activeKeyspace": [
+        [
+            "Cluster AllowAllAuthenticator",
+            "aerodisspace"
+        ]
+    ]
+}

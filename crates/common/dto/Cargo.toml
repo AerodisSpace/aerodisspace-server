@@ -1,0 +1,21 @@
+[package]
+name = "dto"
+documentation.workspace = true
+homepage.workspace = true
+edition.workspace = true
+version.workspace = true
+authors.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = { workspace = true }
+error_mapper = { workspace = true }
+uuid = { workspace = true }
+rocket = { workspace = true }
+envs = { workspace = true }
+serde = { workspace = true }
+logger = { workspace = true }
+
+[lints]
+workspace = true

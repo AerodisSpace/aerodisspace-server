@@ -1,0 +1,22 @@
+[package]
+name = "database"
+documentation.workspace = true
+homepage.workspace = true
+edition.workspace = true
+version.workspace = true
+authors.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+scylla = { workspace = true }
+dotenvy = { workspace = true }
+logger = { workspace = true }
+error_mapper = { workspace = true }
+
+[build-dependencies]
+catalytic = { version = "0.1" }
+dotenvy = { workspace = true }
+
+[lints]
+workspace = true

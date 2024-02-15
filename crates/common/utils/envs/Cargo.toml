@@ -1,0 +1,15 @@
+[package]
+name = "envs"
+documentation.workspace = true
+homepage.workspace = true
+edition.workspace = true
+version.workspace = true
+authors.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+once_cell = { workspace = true }
+
+[lints]
+workspace = true

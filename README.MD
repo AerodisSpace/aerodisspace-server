@@ -25,8 +25,8 @@ cargo install charybdis-migrate
 - **Automatic Migrations**: The build command is configured to perform migrations automatically with each compilation. This helps keep the database schema in sync with the current version of the code.
 
 ### Documentation
-For complete details on the API and how to use the utility crates, please consult our documentation. The documentation is available at the following link: 
-<a href="https://docs.aerodis.space">AerodisSpace API Documentation</a>.
+For complete details on the API and LIVE, and how to use the utility crates, please consult our documentation. The documentation is available at the following link: 
+<a href="https://docs.aerodis.space">AerodisSpace Server Documentation</a>.
 
 ### How to Contribute
 We are always looking for improvements and value the community's contribution. If you are interested in contributing to the AerodisSpace Server Workspace, see below for how to get started:
